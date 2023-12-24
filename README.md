@@ -2,12 +2,17 @@
 Repository Github untuk project akhir PSD Kelompok BP02
 
 # Program Description 
-Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis FPGA untuk estimasi biaya konstruksi yang cepat dan akurat. Sistem akan dirancang untuk menghitung biaya konstruksi untuk 4 tipe bangunan, yaitu commercial building, industrial building, infrastructure building, dan residential building.
+Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis FPGA untuk estimasi biaya konstruksi yang cepat dan akurat. Sistem akan dirancang untuk menghitung biaya konstruksi untuk 4 tipe bangunan, yaitu *commercial building, industrial building, infrastructure building, dan residential building*.
 
 # Component Description
 1. Decoder
-   * Component Decoder berfungsi untuk me-decode instruction yang diinput, dan output dari component ini yaitu hasil decode instruction tersebut.
-   Instruction terdiri dari 7 buah bit, dimana bit ke-0 akan di-decode sebagai OP3_ADDR, bit ke-1 dan 2 akan di-decode sebagai OP2_ADDR, bit ke-3 dan 4 akan di-decode sebagai OP1_ADDR, dan bit ke-5 dan 6 akan di-decode sebagai opcode. Opcode akan digunakan sebagai penentu type building apa yang akan dihitung biayanya.
+   * Component Decoder berfungsi untuk me-*decode* *instruction* yang di-*input*, dan *output* dari component ini yaitu hasil *decode instruction* tersebut.
+   *Instruction* terdiri dari 7 buah bit, dimana:
+      *  Bit ke-0 akan di-decode sebagai OP3_ADDR
+      *  Bit ke-1 dan 2 akan di-decode sebagai OP2_ADDR
+      *  Bit ke-3 dan 4 akan di-decode sebagai OP1_ADDR
+      *  Bit ke-5 dan 6 akan di-decode sebagai opcode.
+      Opcode akan digunakan sebagai penentu type building apa yang akan dihitung biayanya.
 
 2. Calculator
    * Component Calculator memiliki fungsi utama untuk melakukan perhitungan total biaya untuk tiap jenis bangunan. Component ini membutuhkan input berupa PRG_CNT(program counter), opcode, operand-operand, dan cost yang dibutuhkan. Sedangkan output component ini berupa hasil perhitungan total biaya yang dibutuhkan.
