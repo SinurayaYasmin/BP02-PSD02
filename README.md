@@ -36,11 +36,11 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
 Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 3 (Behavioral Style Programming In VHDL)
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
-    > Contoh Code:
-    '''javascript
-    process (CPU_CLK)
-    begin
-        if rising_edge(CPU_CLK) then
+    * Contoh Code:
+      '''javascript
+      process (CPU_CLK)
+      begin
+          if rising_edge(CPU_CLK) then
             case state is 
                 -- When idle state, wait for enable to 1
                 when IDLE =>
