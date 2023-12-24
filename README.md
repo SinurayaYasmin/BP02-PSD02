@@ -25,7 +25,7 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
       * Opcode 10 untuk *commercial building*
       * Opcode 11 untuk *infrastructure building*
 
-4. CostPlanner
+3. CostPlanner
    * Component CostPlanner berfungsi sebagai **main program**, karena *component* lain seperti **Calculator** dan **Decoder** digunakan di *component* ini. Di dalam *component* ini terdapat 5 buah *state* untuk menentukan proses apa yang sedang dilakukan oleh program. Berikut penjelasan dari setiap *state*:
      * State **IDLE** artinya program akan menunggu hingga enable bernilai 1.
      * State **FETCH** artinya program akan menerima *instruction input* dan *program counter* bertambah 1.
@@ -34,7 +34,9 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
      * State **COMPLETE** artinya program sudah selesai melakukan perhitungan.
        
    * Alur program ini dimulai dari state IDLE -> FETCH -> DECODE -> EXECUTE -> COMPLETE.
-
+4. CostPlanner_tb
+   * CostPlanner_tb merupakan testbench dari keseluruhan program ini.
+     
 # Modul Description
 Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 2 (Dataflow Style Programming In VHDL)
@@ -75,7 +77,7 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
           end process;```
 
 * Modul 4 (TestBench)
-    * Menggunakan testbench untuk melakukan pengujian terhadap program.
+    * Menggunakan testbench untuk melakukan pengujian terhadap program. File testbent program ini diberi nama CostPlanner_tb.
 * Modul 5 (Structural Style Programming In VHDL)
     * Menggunakan *component* **Decoder** dan **Calculator**, dan menggunakan *portmap* pada **CostPlanner** untuk menghubungkan *component* **Decoder** dan **Calculator** agar dapat digunakan.
     * Contoh Code:
