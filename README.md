@@ -39,8 +39,8 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
     * Contoh Code:
       ```python
 def hello_world():
-print("Hello, World!")
-```
+print("Hello, World!")```
+
 * Modul 4 (TestBench)
     * Menggunakan testbench untuk melakukan pengujian terhadap program.
 * Modul 5 (Structural Style Programming In VHDL)
