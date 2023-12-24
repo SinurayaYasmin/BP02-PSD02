@@ -28,16 +28,6 @@ architecture tb_arch of CostPlanner_tb is
     end component;
 
 begin
-    -- Clock process
-    process
-    begin
-        while now < 100 ns loop -- Simulate for 100 ns
-            CPU_CLK_tb <= not CPU_CLK_tb; -- Toggle clock
-            wait for CLK_PERIOD / 2; -- Wait half a clock period
-        end loop;
-        wait; -- End simulation
-    end process;
-
     -- Instantiate the CostPlanner entity
     UUT: CostPlanner
     port map (
