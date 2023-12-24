@@ -96,8 +96,6 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
           DEC : Decoder port map (counter, instruction_input, opcode, OP1_ADDR, OP2_ADDR, OP3_ADDR);
           CALC : Calculator port map (counter, opcode_input, operand1_input, operand2_input, operand3_input, cost1, cost2, cost3, cost4, biaya);
       ```
-* Modul 6 (Looping Construct)
-    * Menggunakan looping dalam perhitungan biaya.
 * Modul 7 (Procedure, Function, and Impure Function)
     * Menggunakan *function* di dalam *component* **Calculator**. Salah satu contoh penggunaan *function* yaitu *function* bernama **ApplySafetyCost**. *Function* tersebut berfungsi untuk menentukan apakah *user* ingin menggunakan *safety* lebih atau tidak, jika iya maka akan dikenakan biaya tambahan untuk *safety cost*.
     * Contoh Code:
