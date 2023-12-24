@@ -36,6 +36,20 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
 Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 3 (Behavioral Style Programming In VHDL)
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
+    > Contoh Code:
+    process (CPU_CLK)
+    begin
+        if rising_edge(CPU_CLK) then
+            case state is 
+                -- When idle state, wait for enable to 1
+                when IDLE =>
+                    if enable = '1' then 
+                        state <= FETCH;
+                        counter <= 0;
+                    else 
+                        state <= IDLE;
+                    end if;
+      
 * Modul 4 (TestBench)
     * Menggunakan testbench untuk melakukan pengujian terhadap program.
 * Modul 5 (Structural Style Programming In VHDL)
