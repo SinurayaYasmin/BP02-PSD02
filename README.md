@@ -37,6 +37,31 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
 
 # Modul Description
 Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
+* Modul 2 (Dataflow Style Programming In VHDL)
+    * Menggunakan *conditional signal assignment* dan *selected signal assignment* selama proses perhitungan biaya. *Conditional signal assignment* **(if-else)** digunakan di dalam *function* perhitungan biaya, dan *selected signal assignment* **(switch-case)** digunakan pada kondisi state program.
+    * Contoh Code:
+      ```VHDL
+      --Conditional Signal Assignment
+        if regulations_bit = '1' then
+            return safety_regulations_cost;
+         else
+            return 0;
+        end if;
+
+      --Selected Signal Assignment
+      case opcode is
+            when "01" => -- Residential
+               -- Rest of Code
+            when "10" => -- Commercial
+                --Rest of Code
+            when "00" => -- Industrial
+                --Rest of Code
+            when "11" => -- Infrastructure
+             --Rest of Code
+            when others =>
+                --Rest of Code
+      ```
+      
 * Modul 3 (Behavioral Style Programming In VHDL)
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
     * Contoh Code:
@@ -130,9 +155,20 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
             end case;
       ```
 * Modul 9 (Microprogramming)
-    * Menggunakan *component* dan input dalam bentuk *opcode*. *Opcode* ini yang akan menentukan tipe bangunan apa yang diinginkan, dan *operand* apa saja yang akan digunakan sesuai dengan tipe bangunannya.
+    * Menggunakan *component* dan input dalam bentuk *opcode*. *Opcode* ini yang akan menentukan tipe bangunan apa yang diinginkan, dan *operand* apa saja yang akan digunakan sesuai dengan tipe bangunannya. Penentuan *opcode* ini sesuai dengan hasil *decode* dari *instruction input* yang diberikan.
     * Contoh Code:
       ```VHDL
+      --Proses Decode Instruction Input
+      DEC_PROC : process(PRG_CNT)
+      begin 
+        -- Parse dan decode instruction according to Instruction Definition table
+        opcode <= INSTRUCTION(6 downto 5);
+        OP1_ADDR <= INSTRUCTION(4 downto 3);
+        OP2_ADDR <= INSTRUCTION(2 downto 1);
+        OP3_ADDR <= INSTRUCTION(0);
+      end process;
+
+      --Process Perhitungan Biaya Berdasarkan Opcode
       case opcode is
             when "01" => -- Residential
                 biaya <= (cost1 * unit_cost_per_floor) +
