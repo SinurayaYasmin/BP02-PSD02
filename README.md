@@ -49,6 +49,24 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
     * Menggunakan testbench untuk melakukan pengujian terhadap program.
 * Modul 5 (Structural Style Programming In VHDL)
     * Menggunakan *component* **Decoder** dan **Calculator**, dan menggunakan *portmap* pada **CostPlanner** untuk menghubungkan *component* **Decoder** dan **Calculator** agar dapat digunakan.
+    * Contoh Code:
+      ```VHDL
+          --Memanggil Component Decoder
+          component Decoder is
+            port (
+            PRG_CNT : in integer; -- Program counter
+            instruction : in std_logic_vector(6 downto 0); -- Instruction to be decoded
+            opcode : out std_logic_vector(1 downto 0); -- Opcode 
+            OP1_ADDR : out std_logic_vector(1 downto 0); 
+            OP2_ADDR : out std_logic_vector(1 downto 0); 
+            OP3_ADDR : out std_logic
+            );
+          end component;
+      
+          --Menggunakan Port Map
+          DEC : Decoder port map (counter, instruction_input, opcode, OP1_ADDR, OP2_ADDR, OP3_ADDR);
+          CALC : Calculator port map (counter, opcode_input, operand1_input, operand2_input, operand3_input, cost1, cost2, cost3, cost4, biaya);
+      ```
 * Modul 6 (Looping Construct)
     * Menggunakan looping dalam perhitungan biaya.
 * Modul 7 (Procedure, Function, and Impure Function)
