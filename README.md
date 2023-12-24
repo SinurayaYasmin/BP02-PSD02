@@ -38,8 +38,8 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
     * Contoh Code:
       ```python
-def hello_world():
-print("Hello, World!")```
+          def hello_world():
+          Sprint("Hello, World!")```
 
 * Modul 4 (TestBench)
     * Menggunakan testbench untuk melakukan pengujian terhadap program.
