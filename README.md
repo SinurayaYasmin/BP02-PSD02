@@ -61,17 +61,6 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
             when others =>
                 --Rest of Code
             end case;
-
-      component Decoder is
-        port (
-            PRG_CNT : in integer; -- Program counter
-            instruction : in std_logic_vector(6 downto 0); -- Instruction to be decoded
-            opcode : out std_logic_vector(1 downto 0); -- Opcode 
-            OP1_ADDR : out std_logic_vector(1 downto 0); 
-            OP2_ADDR : out std_logic_vector(1 downto 0); 
-            OP3_ADDR : out std_logic
-        );
-    end component;
       ```
       
 * Modul 3 (Behavioral Style Programming In VHDL)
