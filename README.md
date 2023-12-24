@@ -38,18 +38,9 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
     * Contoh Code:
       '''javascript
-      process (CPU_CLK)
-      begin
-          if rising_edge(CPU_CLK) then
-            case state is 
-                -- When idle state, wait for enable to 1
-                when IDLE =>
-                    if enable = '1' then 
-                        state <= FETCH;
-                        counter <= 0;
-                    else 
-                        state <= IDLE;
-                    end if;
+      function add(num1, num2) {
+      return num1+num2;
+      }
       '''
 * Modul 4 (TestBench)
     * Menggunakan testbench untuk melakukan pengujian terhadap program.
