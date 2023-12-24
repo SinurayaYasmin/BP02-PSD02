@@ -71,9 +71,83 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
     * Menggunakan looping dalam perhitungan biaya.
 * Modul 7 (Procedure, Function, and Impure Function)
     * Menggunakan *function* di dalam *component* **Calculator**. Salah satu contoh penggunaan *function* yaitu *function* bernama **ApplySafetyCost**. *Function* tersebut berfungsi untuk menentukan apakah *user* ingin menggunakan *safety* lebih atau tidak, jika iya maka akan dikenakan biaya tambahan untuk *safety cost*.
+    * Contoh Code:
+      ```VHDL
+      function ApplySafetyCost(regulations_bit: std_logic) return integer is
+      begin
+        if regulations_bit = '1' then
+            return safety_regulations_cost;
+         else
+            return 0;
+        end if;
+      end function ApplySafetyCost;
+      ```
 * Modul 8 (Finite State Machine)
     * Menggunakan 5 *state* di dalam *component* **CostPlanner** sebagai penentu instruksi apa yang sedang dilakukan oleh program. 5 *state* yang digunakan yaitu IDLE, FETCH, DECODE, EXECUTE, dan COMPLETE.
+    * Contoh Code:
+      ```VHDL
+          case state is 
+                -- When idle state, wait for enable to 1
+                when IDLE =>
+                    if enable = '1' then 
+                        state <= FETCH;
+                        counter <= 0;
+                    else 
+                        state <= IDLE;
+                    end if;
+    
+                -- When fetch, receive instruction input
+                when FETCH =>
+                    counter <= counter + 1;
+                    if counter = 1 then
+                        state <= DECODE;
+                    end if;
+    
+                -- When decode, pass arguments to decoder component
+                when DECODE =>
+                    counter <= counter + 1;
+                    instruction_input <= instruction;
+                    if counter = 2 then
+                        state <= EXECUTE;
+                    end if;
+
+                When EXECUTE =>
+                    counter <= counter + 1;
+                    opcode_input <= opcode;
+                    operand1_input <= OP1_ADDR;
+                    operand2_input <= OP2_ADDR;
+                    operand3_input <= OP3_ADDR;
+                    if counter = 3 then
+                        state <= COMPLETE;
+                    end if;
+    
+                When COMPLETE =>
+                    report "Instruction complete";
+                    state <= IDLE;
+            end case;
+      ```
 * Modul 9 (Microprogramming)
-    * Menggunakan *component* dan input dalam bentuk *opcode*. *Opcode* ini yang akan menentukan tipe bangunan apa yang diinginkan, dan *operand* apa saja yang akan digunakan sesuai dengan tipe bangunannya. 
+    * Menggunakan *component* dan input dalam bentuk *opcode*. *Opcode* ini yang akan menentukan tipe bangunan apa yang diinginkan, dan *operand* apa saja yang akan digunakan sesuai dengan tipe bangunannya.
+    * Contoh Code:
+      ```VHDL
+      case opcode is
+            when "01" => -- Residential
+                biaya <= (cost1 * unit_cost_per_floor) +
+                        (cost2 * land_cost_per_sqm) +
+                        (cost1 * cost2 * cost_per_sqm_materials(index_fasilitas)) +
+                        amenities_cost(index_material);
+            when "10" => -- Commercial
+                biaya <= (cost1 * land_cost_per_sqm) +
+                        (cost2 * cost3 * unit_cost_per_sqm) +
+                        ApplyComplianceCost(operand3);
+            when "00" => -- Industrial
+                biaya <= (cost1 * unit_cost_per_unit(index_unit)) +
+                        (cost2 * unit_cost_per_sqm_industrial) + (cost3 * equipment_cost(index_equipment))
+                         + ApplySafetyCost(operand3);
+            when "11" => -- Infrastructure
+                biaya <= (cost1 * (cost2 + cost3)) + CalculateCost(operand3);
+            when others =>
+                biaya <= 0; -- Invalid opcode
+      ```
    
 
