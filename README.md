@@ -34,6 +34,7 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
      * State **COMPLETE** artinya program sudah selesai melakukan perhitungan.
        
    * Alur program ini dimulai dari state IDLE -> FETCH -> DECODE -> EXECUTE -> COMPLETE.
+     
 4. CostPlanner_tb
    * CostPlanner_tb merupakan testbench dari keseluruhan program ini.
      
