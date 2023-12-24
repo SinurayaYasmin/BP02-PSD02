@@ -188,7 +188,9 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
                 biaya <= 0; -- Invalid opcode
       ```
       * Table Hasil Decoding:
-          * | Bit ke 6 dan 5 | Bit ke 4 dan 3 | Bit ke 2 dan 1 | Bit ke 0 |
-            | ---------------|----------------|----------------|----------|
-   
+          * | Bit ke 6 dan 5 | Bit ke 4 dan 3 | Bit ke 2 dan 1 |     Bit ke 0    |
+            | ---------------|----------------|----------------|-----------------|
+            | Opcode untuk   | Variabel       | Variabel       | Conditional bit |
+            | memilih tipe   | Pilihan        | Pilihan        | penggunaan harga|
+            | building       | Pertama        | Kedua          | tambahan        |
 
