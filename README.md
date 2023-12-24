@@ -36,6 +36,6 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 8 (Finite State Machine)
     * Menggunakan 5 state di dalam component CostPlanner sebagai penentu instruksi apa yang sedang dilakukan oleh program. 5 state yang digunakan yaitu IDLE, FETCH, DECODE, EXECUTE, dan COMPLETE.
 * Modul 9 (Microprogramming)
-    * Menggunakan component dan input dalam bentuk opcode. Opcode ini yang akan menentukan tipe bangunan apa yang diinginkan, dan operand-operand apa saja yang akan digunakan sesuai dengan tipe bangunannya. 
+    * Menggunakan component dan input dalam bentuk opcode. Opcode ini yang akan menentukan tipe bangunan apa yang diinginkan, dan operand-operand apa saja yang akan digunakan sesuai dengan tipe bangunannya. m
    
 
