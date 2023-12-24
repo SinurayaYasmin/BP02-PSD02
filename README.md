@@ -25,11 +25,17 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
 Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 3 (Behavioral Style Programming In VHDL)
     * Menggunakan process. Salah satu contoh penerapan process yaitu pada component CostPlanner, process ini memiliki sensitivity list berupa CPU_CLK. Process ini akan melakukan execution ketika CPU_CLK sedang rising_edge.
-* Modul 4
-* Modul 5
-* Modul 6
-* Modul 7
-* Modul 8
-* Modul 9
+* Modul 4 (TestBench)
+    * Menggunakan testbench untuk melakukan pengujian terhadap program.
+* Modul 5 (Structural Style Programming In VHDL)
+    * Menggunakan component seperti Decoder dan Calculator, dan menggunakan portmap pada CostPlanner untuk menghubungkan component Decoder dan Calculator agar dapat digunakan.
+* Modul 6 (Looping Construct)
+    * 
+* Modul 7 (Procedure, Function, and Impure Function)
+    * Menggunakan function di dalam component Calculator. Salah satu contoh penggunaan function yaitu function bernama ApplySafetyCost. Function tersebut berfungsi untuk menentukan apakah user ingin menggunakan safety lebih atau tidak, jika iya maka akan dikenakan biaya tambahan untuk safety cost.
+* Modul 8 (Finite State Machine)
+    * Menggunakan 5 state di dalam component CostPlanner sebagai penentu instruksi apa yang sedang dilakukan oleh program. 5 state yang digunakan yaitu IDLE, FETCH, DECODE, EXECUTE, dan COMPLETE.
+* Modul 9 (Microprogramming)
+    * Menggunakan component dan input dalam bentuk opcode. Opcode ini yang akan menentukan tipe bangunan apa yang diinginkan, dan operand-operand apa saja yang akan digunakan sesuai dengan tipe bangunannya. 
    
 
