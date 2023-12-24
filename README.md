@@ -11,9 +11,13 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
 
 2. Calculator
    Component Calculator memiliki fungsi utama untuk melakukan perhitungan total biaya untuk tiap jenis bangunan. Component ini membutuhkan input berupa PRG_CNT(program counter), opcode, operand-operand, dan cost yang dibutuhkan. Sedangkan output component ini berupa hasil perhitungan total biaya yang dibutuhkan.
-   Perhitungan biaya ditentukan dengan input opcode. Dimana opcode 00 untuk industrial building, 01 untuk residential building, 10 untuk commercial building, dan 11 untuk infrastructure building.
+   Perhitungan biaya ditentukan dengan input opcode. Dimana :
+   * opcode 00 untuk industrial building
+   * 01 untuk residential building
+   * 10 untuk commercial building
+   * 11 untuk infrastructure building
 
-3. CostPlanner
+4. CostPlanner
    Component CostPlanner berfungsi sebagai 'main program', karena component lain seperti Calculator dan Decoder digunakan di component ini. Di dalam component ini terdapat 5 buah state untuk menentukan proses apa yang sedang dilakukan oleh program. State IDLE artinya program akan menunggu hingga enable bernilai 1. State FETCH artinya program akan menerima instruction input dan program counter bertambah 1. State DECODE artinya program memberikan parameter-parameter yang dibutuhkan oleh component Decode untuk melakukan decoding pada instrcution input. State EXECUTE artinya program akan memberikan parameter-parameter yang dibutuhkan oleh component Calculator untuk melakukan perhitungan terhadap biaya pembangunan. State COMPLETE artinya program sudah selesai melakukan perhitungan.
    Alur program ini dimulai dari state IDLE -> FETCH -> DECODE -> EXECUTE -> COMPLETE.
 
