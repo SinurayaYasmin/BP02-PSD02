@@ -32,7 +32,7 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
      * State **DECODE** artinya program memberikan parameter-parameter yang dibutuhkan oleh *component* **Decode** untuk melakukan *decoding* pada *instrcution input*.
      * State **EXECUTE** artinya program akan memberikan parameter-parameter yang dibutuhkan oleh *component* **Calculator** untuk melakukan perhitungan terhadap biaya pembangunan.
      * State **COMPLETE** artinya program sudah selesai melakukan perhitungan.
-     * 
+       
    * Alur program ini dimulai dari state IDLE -> FETCH -> DECODE -> EXECUTE -> COMPLETE.
 
 # Modul Description
