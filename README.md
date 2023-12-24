@@ -60,6 +60,7 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
              --Rest of Code
             when others =>
                 --Rest of Code
+            end case;
       ```
       
 * Modul 3 (Behavioral Style Programming In VHDL)
