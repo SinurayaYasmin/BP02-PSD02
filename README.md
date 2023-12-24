@@ -187,5 +187,7 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
             when others =>
                 biaya <= 0; -- Invalid opcode
       ```
+      * Table Hasil Decoding:
+          | Bit ke 6 dan 5 | Bit ke 4 dan 3 | Bit ke 2 dan 1 | Bit ke 0|
    
 
