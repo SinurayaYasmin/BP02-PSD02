@@ -12,7 +12,8 @@ Proyek ini bertujuan untuk mengembangkan dan mengimplementasikan sistem berbasis
       *  Bit ke-1 dan 2 akan di-decode sebagai OP2_ADDR
       *  Bit ke-3 dan 4 akan di-decode sebagai OP1_ADDR
       *  Bit ke-5 dan 6 akan di-decode sebagai opcode.
-      Opcode akan digunakan sebagai penentu type building apa yang akan dihitung biayanya.
+        
+    * Opcode akan digunakan sebagai penentu type building apa yang akan dihitung biayanya.
 
 2. Calculator
    * Component Calculator memiliki fungsi utama untuk melakukan perhitungan total biaya untuk tiap jenis bangunan. Component ini membutuhkan input berupa PRG_CNT(program counter), opcode, operand-operand, dan cost yang dibutuhkan. Sedangkan output component ini berupa hasil perhitungan total biaya yang dibutuhkan.
