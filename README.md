@@ -37,7 +37,7 @@ Berikut adalah penjelasan untuk penerapan tiap modul pada program ini :
 * Modul 3 (Behavioral Style Programming In VHDL)
     * Menggunakan *process*. Salah satu contoh penerapan process yaitu pada *component* **CostPlanner**, *process* ini memiliki *sensitivity list* berupa **CPU_CLK**. *Process* ini akan melakukan execution ketika **CPU_CLK** sedang *rising edge*.
     * Contoh Code:
-      ```python
+      ```VHDL
           def hello_world():
           Sprint("Hello, World!")```
 
